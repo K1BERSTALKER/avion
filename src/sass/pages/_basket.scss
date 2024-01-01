@@ -1,0 +1,51 @@
+@use "../abstracts/" as *;
+
+.basket {
+  margin: 3rem 0;
+  background: #f9f9f9;
+  padding: 4rem 8rem;
+
+  @include brekpoints-down(small) {
+    margin: 0;
+    padding: 0 1rem;
+  }
+
+  @include grid(1, center, center, 0, 3rem);
+
+  &__title {
+    @include font(36px, 400, $fontClash, normal);
+  }
+
+  &__card {
+    &Head {
+      @include flex(space-between, center, row, nowrap, 0);
+      padding: 1rem 0;
+      border-bottom: 1px solid #ebe8f4;
+    }
+    &s {
+      @include grid(1, center, center, 0, 2rem);
+    }
+  }
+
+  &__checkout {
+    @include flex(center, flex-end, column, nowrap, 1rem);
+  }
+
+  &__subtotal {
+    @include font(24px, 400, $fontClash, normal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: $mainColor;
+
+    span {
+      @include font(20px, 400, $fontClash, normal);
+    }
+  }
+
+  &__desc {
+    @include font(14px, 400, $fontSatoshi, normal);
+    color: var(--Primary, #4e4d93);
+  }
+}

@@ -1,0 +1,77 @@
+@use "../abstracts/" as *;
+.cartItem {
+  // @include flex(space-between, center, row, nowrap, 0);
+  @include grid(3, space-between, center, 0, 0);
+
+  @include brekpoints-down(small) {
+    @include grid(1, space-between, center, 0, 1rem);
+  }
+
+  &__content {
+    @include flex(start, center, row, nowrap, 1rem);
+  }
+
+  img {
+    width: 109px;
+    height: 134px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  &__text {
+    @include flex(none, flex-start, column, nowrap, 8px);
+    height: 100%;
+  }
+
+  &__title {
+    @include font(20px, 400, $fontClash, normal);
+  }
+
+  &__desc {
+    width: 179px;
+    @include font(14px, 400, $fontSatoshi, normal);
+  }
+
+  &__price {
+    @include font(16px, 400, $fontSatoshi, normal);
+
+    &End {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__form {
+    @include flex(center, center, row, nowrap, 0);
+    position: relative;
+    width: 122px;
+    height: 46px;
+    background: var(--Light-Grey, #f9f9f9);
+  }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    padding: 12px 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+  }
+
+  &__quantity {
+    @include flex(center, center, row, nowrap, 0);
+
+    &Icon {
+      position: absolute;
+
+      &:first-child {
+        left: 1rem;
+      }
+
+      &:last-child {
+        right: 1rem;
+      }
+    }
+  }
+}

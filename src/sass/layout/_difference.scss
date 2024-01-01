@@ -1,0 +1,41 @@
+@use "../abstracts/" as *;
+
+.difference {
+  @include flex(center, center, column, nowrap, 5rem);
+  margin: 5rem 0;
+
+  @include brekpoints-down(small) {
+    padding: 1.5rem;
+  }
+
+  &__item {
+    @include flex(center, start, column, nowrap, 1rem);
+    &s {
+      @include grid(4, space-between, center, 2rem, 0);
+
+      @include brekpoints-down(small) {
+        @include grid(1, space-between, center, 0, 2rem);
+      }
+    }
+  }
+
+  &__headTitle {
+    @include font(24px, 400, $fontClash, normal);
+  }
+
+  &__icon {
+    font-size: x-large;
+    color: $mainColor;
+  }
+
+  &__title {
+    @include font(28px, 400, $fontClash, normal);
+    color: $mainColor;
+  }
+
+  &__desc {
+    @include font(16px, 400, $fontSatoshi, normal);
+    color: $mainColor;
+    width: 80%;
+  }
+}

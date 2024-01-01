@@ -1,0 +1,75 @@
+@use "../abstracts/" as *;
+
+.footer {
+  @include flex(center, center, column, nowrap, 3rem);
+  background: $mainColor;
+  color: white;
+  padding-left: 80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include brekpoints-down(small) {
+    padding: 0;
+    padding-top: 1rem;
+    padding-left: 1.5rem;
+    margin-top: 5rem;
+  }
+
+  &__link {
+    @include font(14px, 400, $fontSatoshi, normal);
+    &s {
+      width: 100%;
+      @include flex(space-between, start, row, wrap, 0);
+
+      ul {
+        @include flex(start, start, column, nowrap, 1rem);
+      }
+
+      @include brekpoints-down(small) {
+        @include flex(start, start, row, wrap, 3rem);
+      }
+    }
+  }
+
+  &__form {
+    width: 40%;
+
+    @include brekpoints-down(small) {
+      width: 100%;
+    }
+  }
+
+  &__mailing {
+    width: 80%;
+    @include flex(start, start, row, wrap, 0);
+
+    @include brekpoints-down(small) {
+      width: 100%;
+    }
+  }
+
+  &__input {
+    width: 60%;
+    height: 54px;
+    @include font(14px, 400, $fontSatoshi, normal);
+    color: $mainColor;
+    &::placeholder {
+      @include font(14px, 400, $fontSatoshi, normal);
+      color: $mainColor;
+      opacity: 0.2;
+    }
+  }
+
+  &__copyright {
+    width: 100%;
+    padding-right: 80px;
+    @include flex(space-between, center, row, nowrap, 0);
+  }
+
+  &__social {
+    font-size: x-large;
+    &s {
+      @include flex(center, center, row, nowrap, 2rem);
+    }
+  }
+}

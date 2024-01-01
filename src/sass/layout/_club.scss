@@ -1,0 +1,72 @@
+@use "../abstracts/" as *;
+
+.club {
+  width: 100%;
+  padding: 52px 74px 65px 93px;
+  background: #f9f9f9;
+
+  @include brekpoints-down(small) {
+    padding: 0;
+  }
+
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background: white;
+    @include flex(center, center, column, nowrap, 5em);
+  }
+
+  &__title {
+    @include font(36px, 400px, $fontClash, normal);
+    text-align: center;
+  }
+
+  &__content {
+    @include flex(center, center, column, nowrap, 2rem);
+  }
+
+  &__desc {
+    @include font(16px, 400, $fontSatoshi, normal);
+    text-align: center;
+    width: 60%;
+
+    @include brekpoints-down(small) {
+      width: 100%;
+    }
+  }
+
+  &__form {
+    width: 50%;
+    @include flex(center, center, row, nowrap, 0);
+    height: auto;
+
+    @include brekpoints-down(small) {
+      width: 100%;
+    }
+  }
+
+  &__input {
+    background-color: #f9f9f9;
+    width: 65%;
+    height: 54px;
+    @include font(16px, 400, $fontSatoshi, normal);
+
+    &::placeholder {
+      @include font(16px, 400, $fontSatoshi, normal);
+      color: $mainColor;
+      opacity: 0.2;
+    }
+
+    @include brekpoints-down(small) {
+      height: 78px;
+    }
+  }
+
+  &__btn {
+    padding: 1rem 2rem;
+    background: $mainColor;
+    color: white;
+    display: block;
+  }
+}

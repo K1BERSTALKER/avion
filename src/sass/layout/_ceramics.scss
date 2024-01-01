@@ -1,0 +1,24 @@
+@use "../abstracts/" as *;
+
+.ceramics {
+  @include flex(center, start, column, nowrap, 3rem);
+  margin: 2rem 0;
+
+  @include brekpoints-down(small) {
+    padding: 0 1.5rem;
+  }
+
+  &__cards {
+    width: 100%;
+    @include flex(space-between, center, row, wrap, 2rem);
+
+    @include brekpoints-down(small) {
+      @include flex(center, center, column, nowrap, 2rem);
+    }
+  }
+
+  &__title {
+    @include font(32px, 400, $fontClash, normal);
+    color: $mainColor;
+  }
+}

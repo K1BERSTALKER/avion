@@ -1,0 +1,25 @@
+$brekpoints-up: (
+  "small": 36em,
+  "medium": 48em,
+  "large": 62em,
+  "xlarge": 75em,
+);
+
+$brekpoints-down: (
+  "xsmall": 36em,
+  "small": 48em,
+  "medium": 62em,
+  "large": 75em,
+);
+
+@mixin brekpoints-down($size) {
+  @media (max-width: map-get($brekpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin brekpoints-up($size) {
+  @media (min-width: map-get($brekpoints-up, $size)) {
+    @content;
+  }
+}
